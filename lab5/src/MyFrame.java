@@ -1,5 +1,11 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
 import java.util.jar.JarEntry;
@@ -46,11 +52,56 @@ public class MyFrame {
         RBGroup.add(RB2);
         centerPanel.add(RB1);
         centerPanel.add(RB2);
+        RB1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                spinner.setValue(15);
+            }
+        });
+        RB2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                comboBox.addItem("12");
+            }
+        });
 
         JPanel eastPanel = new JPanel();
         eastPanel.setLayout(new BorderLayout());
         JTextArea TA = new JTextArea("Текстовая область", 1, 30);
         eastPanel.add(TA);
+        slider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int value = ((JSlider)e.getSource()).getValue();
+                TA.setText("" + value);
+            }
+        });
+        RB1.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                TA.setText("Радиокнопка 1");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
 
         //Component horizontalStrut = Box.createHorizontalStrut(40);
         //northPanel.add(horizontalStrut);
