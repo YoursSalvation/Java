@@ -1,18 +1,22 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class lab1_2_17 {
     public static void main(String[] args) {
-
+        Scanner sca = new Scanner(System.in);
         Random random = new Random();
-        int[][] arr = new int[3][3];
+        System.out.println("Введите количество строк в массиве");
+        int st = sca.nextInt();
+        System.out.println("Введите количество столбцов в массиве");
+        int sb = sca.nextInt();
+        int[][] arr = new int[st][sb];
         System.out.println("Массив: ");
 
         for (int i = 0; i < arr.length; i++) {
+            System.out.println();
             for (int j = 0; j < arr.length; j++) {
                 arr[i][j] = random.nextInt(1, 10);
                 System.out.print(arr[i][j] + " ");
-                if (j == 2)
-                    System.out.println("");
             }
         }
 
@@ -35,7 +39,7 @@ public class lab1_2_17 {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (sumstr[i] == sumstl[j]) {
-                    System.out.println("Сумма строки " + i + " равна сумме столбца " + j);
+                    System.out.println("\nСумма строки " + (i+1) + " равна сумме столбца " + (j+1));
                 }
             }
         }
