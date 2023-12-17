@@ -1,10 +1,15 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class lab1_2_7 {
     public static void main(String[] args) {
-
+        Scanner sca = new Scanner(System.in);
         Random random = new Random();
-        int[][] arr = new int[3][3];
+        System.out.println("Введите количество строк в массиве");
+        int st = sca.nextInt();
+        System.out.println("Введите количество столбцов в массиве");
+        int sb = sca.nextInt();
+        int[][] arr = new int[st][sb];
         int x = 0, y = 0;
         System.out.println("Массив: ");
 

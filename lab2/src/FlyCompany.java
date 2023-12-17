@@ -36,7 +36,7 @@ public class FlyCompany {
         for (FlyApparat f:masFly) {
             if (f instanceof Plane)
                 k++;
-            if (f instanceof Helicpoter)
+            if (f instanceof Helicopter)
                 n++;
         }
         System.out.println("\t\nКоличество самолетов: " + k + " Количество вертолетов: " + n);

@@ -2,10 +2,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.concurrent.Flow;
 import java.util.jar.JarEntry;
@@ -15,7 +12,7 @@ public class MyFrame {
 
         JFrame frame = new JFrame("FrameDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
+        frame.setSize(200, 200);
 
         JPanel northPanel = new JPanel();
         northPanel.setLayout(new GridLayout(2, 3));
@@ -76,30 +73,10 @@ public class MyFrame {
                 TA.setText("" + value);
             }
         });
-        RB1.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
+        RB1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 TA.setText("Радиокнопка 1");
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
             }
         });
 
@@ -113,6 +90,6 @@ public class MyFrame {
         frame.add(westPanel, BorderLayout.WEST);
         frame.setVisible(true);
         frame.pack();
-        frame.setMinimumSize(frame.getSize());
+        //frame.setMinimumSize(frame.getSize());
     }
 }
