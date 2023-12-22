@@ -6,7 +6,6 @@ import javax.swing.*;
 import javax.swing.event.*;
 public class ListWithHashPopUp extends JFrame{
     JPanel panel1 = null;
-    static File f1;
     final JList myList = new JList();
     final DefaultListModel myListModel = new DefaultListModel();
     private static HashMap<String, HashMap> myHashKey = new HashMap<String, HashMap>();
@@ -155,7 +154,7 @@ public class ListWithHashPopUp extends JFrame{
                 String age = myHash.get("age");
                 String adres = myHash.get("adres");
 
-                myBWriter.write(""+f + " "+ age + " " + adres);
+                myBWriter.write(""+f+";" + " "+ age+";" + " " + adres);
                 myBWriter.newLine();
             }
             myBWriter.close();
@@ -175,7 +174,7 @@ public class ListWithHashPopUp extends JFrame{
         try (BufferedReader br = new BufferedReader(myReader)) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] parts = line.split(" ");
+                String[] parts = line.split(";");
                 if (parts.length >= 3) {
                     String key = parts[0].trim();
                     String key2 = parts[1].trim();
