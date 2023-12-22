@@ -1,0 +1,4 @@
+12-19 06:08:23 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "STUDENT" не найдена
+Table "STUDENT" not found; SQL statement:
+select * from student [42102-170]
